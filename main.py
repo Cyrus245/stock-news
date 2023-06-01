@@ -35,6 +35,7 @@ percentage = p_diff / float(y_day_closing_price) * 100
 
 # if percentage greater than 1% send the relevant news to the user
 if abs(percentage) > 1:
+    # extracting the news article from api
     news_articles = requests.get(f'https://newsapi.org/v2/everything?q=tesla&apiKey={news_api_key}').json()['articles']
 
     # extracting first three articles
